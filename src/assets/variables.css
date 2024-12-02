@@ -1,0 +1,14 @@
+:root {
+    --template-color-primary: #1f3d7e;
+    --el-menu-active-color: #0e317c;
+    --el-menu-text-color: #dee3ee;
+    --el-menu-bg-color:#1e418b;
+    --el-menu-hover-bg-color: #0e317c;
+    --el-color-primary:#2680ED;
+    --el-color-success:#46E864;
+    --el-color-warning: #EDA726;
+    --el-color-danger: #E94560;
+    --el-header-padding: 5px 0;
+
+    --el-button-bg-color: #1f3d7e;
+}

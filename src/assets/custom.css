@@ -1,0 +1,187 @@
+/*
+* Estilos personalizados 
+ */
+
+.actions > .el-button {
+  width: 65px !important;
+}
+
+.table-item-form {
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid rgba(100, 100, 100, 0.25);
+}
+
+.table-item-form td {
+  width: 49%;
+}
+
+.table-item-form th,
+.table-item-form td {
+  text-align: left;
+  padding: 1px;
+}
+
+.table-item-form tr:nth-child(even) {
+  background-color: rgba(100, 100, 100, 0.15);
+}
+
+.actions-component {
+  margin: 5px 0;
+}
+
+.btn-only-icon {
+  width: 50px !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+
+.cardLogin .el-card__header {
+  background-color: var(--template-color-primary);
+}
+
+
+.color-white {
+  color: #ffffff !important;
+}
+
+pointer {
+  cursor: pointer;
+}
+
+
+.el-button-group {
+  display: flex !important;
+}
+
+.el-button-group>.el-button:last-child {
+  width: 35px !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.icon-btn {
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.table-custom-striped {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-custom-striped th, td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table-custom-striped  tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table-header-custom th {
+  background-color: #f5f7fa !important;
+}
+
+.table-header-custom th .cell {
+  color: #121212;
+  font-weight: 600;
+}
+
+.table-header-custom .el-dropdown-link,
+.table-row-custom .el-dropdown-link
+{
+  cursor: pointer;
+  color: var(--el-color-primary);
+  display: flex;
+  align-items: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.font-weight-600 {
+  font-weight: 700 !important;
+}
+
+.font-weight-600-semi {
+  color: #121212;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500 !important;
+}
+
+
+.btnSerachRight {
+  float: right; padding: 3px 7px;
+}
+
+
+.el-table__body tr.current-row>td.el-table__cell {
+  background-color: #c2e7ff;
+}
+
+
+/* Estilo básico de la tabla */
+.table-custom {
+  width: 100%; /* Ancho del 100% de su contenedor */
+  border-collapse: collapse; /* Colapso de bordes para evitar espacios entre celdas */
+}
+
+/* Estilo para el encabezado (thead) */
+.table-custom thead {
+  background-color: #E0E0E0; /* Color de fondo oscuro */
+  color: black; /* Color de texto blanco */
+}
+
+/* Estilo de las filas impares (efecto estilo cebra) */
+.table-custom tbody tr:nth-child(odd) {
+  background-color: #FAFAFA; /* Color de fondo para filas impares */
+}
+
+/* Estilo de las celdas */
+.table-custom td, .table-custom th {
+  border: 1px solid #dfdfdf; /* Bordes de 1px sólido con un color gris claro */
+  padding: 8px; /* Espaciado interno de las celdas */
+  text-align: left; /* Alineación del texto a la izquierda */
+}
+
+/* Estilo al pasar el cursor sobre las filas */
+.table-custom tr:hover {
+  background-color: #f0f0f0; /* Color de fondo más claro al pasar el cursor */
+}
+
+.card-infor-form .el-card__body {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.el-dialog__header {
+  margin-right: 0px !important;
+}
+
+.card-hielo,
+.el-dialog__header {
+  background-color: #fafbfe !important;
+  /* background-color: #ffffff !important; */
+}
+
+.el-dialog {
+  /* background-color: #fafbfe !important; */
+  background-color: #ebedf2 !important;
+}
+
+
+.el-form--default.el-form--label-top .el-form-item .el-form-item__label {
+  margin-bottom: 4px;
+  line-height: 16px;
+  font-size: 13px;
+  font-weight: 500;
+}
