@@ -1,10 +1,11 @@
 <template>
   <div class="header-container">
     <div>
-      <logowhite class="logoWhite" />
+      <!-- <logowhite class="logoWhite" /> -->
+      <img src="@/assets/img/logo.7cdc3f2e.png" alt="" style="height: 36px; width: auto;">
     </div>
     <div class="color-white">
-      <a class="link" href="https://www.gob.pe/municajamarca" target="_blank">
+      <a class="link" href="https://www.gob.pe/munichota" target="_blank">
         <v-icon style="width: 18px; height: 18px; margin-right: 5px;" name="io-home-outline" />
         Página Principal
       </a>
@@ -19,13 +20,14 @@
 <script>
 // import HeaderMenuItems from './headerMenuItems.vue'
 // import HeaderMenuItemsMobile from './headerMenuItemsMobile.vue'
-import logowhite from '@/assets/img/logoWhite.svg'; 
+// import logowhite from '@/assets/img/logoWhite.svg'; 
+// import logowhite from '@/assets/img/logoWhite.svg'; 
 export default {
   name: 'HeaderContent',
   components: {
     // HeaderMenuItems,
     // HeaderMenuItemsMobile
-    logowhite
+    // logowhite
   },
   data() {
     return{

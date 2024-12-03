@@ -3,7 +3,7 @@
 
 <template>
   <div class="home-view">
-    <img id="main-image" src="@/assets/img/admin-template-main.png" alt="Main Image">
+    <!-- <img id="main-image" src="@/assets/img/admin-template-main.png" alt="Main Image"> -->
   </div>
 </template>
 

@@ -12,7 +12,8 @@
           @click="appStore.toggleSideBar()"
         />
         <div style="text-align: center;">
-          <logowhite2 class="logoWhite2" />
+          <img src="@/assets/img/logo.7cdc3f2e.png" alt="">
+          <!-- <logowhite2 class="logoWhite2" /> -->
         </div>
       </div>
       <div class="sidebar-body">
@@ -35,7 +36,8 @@
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useAuthStore } from '@/stores/auth'
 import SidebarItem from './sidebarItem.vue'
-import logowhite2 from '@/assets/img/logoWhite.svg'; 
+// import logowhite2 from '@/assets/img/logoWhite.svg'; 
+// import logowhite2 from '@/assets/img/logo.7cdc3f2e.png'; 
 import { useAppStore } from '../../../stores/app'
 
 // const isCollapse = ref(true);

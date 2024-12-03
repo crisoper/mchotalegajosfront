@@ -1,49 +1,51 @@
 <template>
-  <el-form
-    ref="formRefUser"
-    :model="formData"
-    :rules="reglasValidacion"
-    label-width="120px"
-    class="demo-form"
-    label-position="top"
-  >
-    <div v-loading="loadingData" class="p-3"> 
-      <el-row :gutter="12">
-        <el-col :xs="24" :sm="12" :md="8">
-          <el-form-item label="Email" prop="email">
-            <el-input ref="emailField" v-model="formData.email" placeholder="Email" />
-          </el-form-item>
-        </el-col>
-        <el-col :xs="24" :sm="12" :md="8">
-          <el-form-item label="Rol" prop="role_id">
-            <el-select v-model="formData.role_id" placeholder="Rol" style="width: 100%">
-              <el-option
-                v-for="rol in roles"
-                :key="rol.id"
-                :label="rol.name"
-                :value="rol.id"
-              />
-            </el-select>
-          </el-form-item>
-        </el-col>
-        <el-col :xs="24" :sm="12" :md="8">
-          <el-form-item v-if="formData.id === undefined" label="Clave" prop="password">
-            <el-input v-model="formData.password" placeholder="Clave" />
-          </el-form-item>
-          <el-form-item v-else label="Nueva clave" prop="password">
-            <el-input v-model="formData.password" placeholder="Clave" />
-            <span class="text-muted small">Dejar en blanco si no desea cambiar</span>
-          </el-form-item>
-        </el-col>
-      </el-row>
-      <el-row :gutter="12" type="flex" class="row-bg mt-4" justify="end">
-        <el-button v-if="formData.id === undefined" @click="resetForm('formRefUser')">Cancelar</el-button>
-        <el-button type="primary" @click="submitForm('formRefUser')">
-          {{ formData.id === undefined ? 'Guardar' : 'Actualizar' }}
-        </el-button>
-      </el-row>
-    </div>
-  </el-form>
+  <el-card shadow="never">
+    <el-form
+      ref="formRefUser"
+      :model="formData"
+      :rules="reglasValidacion"
+      label-width="120px"
+      class="demo-form"
+      label-position="top"
+    >
+      <div v-loading="loadingData" class="p-3"> 
+        <el-row :gutter="12">
+          <el-col :xs="24" :sm="12" :md="8">
+            <el-form-item label="Email" prop="email">
+              <el-input ref="emailField" v-model="formData.email" placeholder="Email" />
+            </el-form-item>
+          </el-col>
+          <el-col :xs="24" :sm="12" :md="8">
+            <el-form-item label="Rol" prop="role_id">
+              <el-select v-model="formData.role_id" placeholder="Rol" style="width: 100%">
+                <el-option
+                  v-for="rol in roles"
+                  :key="rol.id"
+                  :label="rol.name"
+                  :value="rol.id"
+                />
+              </el-select>
+            </el-form-item>
+          </el-col>
+          <el-col :xs="24" :sm="12" :md="8">
+            <el-form-item v-if="formData.id === undefined" label="Clave" prop="password">
+              <el-input v-model="formData.password" placeholder="Clave" />
+            </el-form-item>
+            <el-form-item v-else label="Nueva clave" prop="password">
+              <el-input v-model="formData.password" placeholder="Clave" />
+              <span class="text-muted small">Dejar en blanco si no desea cambiar</span>
+            </el-form-item>
+          </el-col>
+        </el-row>
+        <el-row :gutter="12" type="flex" class="row-bg mt-4" justify="end">
+          <el-button v-if="formData.id === undefined" @click="resetForm('formRefUser')">Cancelar</el-button>
+          <el-button type="primary" @click="submitForm('formRefUser')">
+            {{ formData.id === undefined ? 'Guardar' : 'Actualizar' }}
+          </el-button>
+        </el-row>
+      </div>
+    </el-form>
+  </el-card>
 </template>
 
 <script>

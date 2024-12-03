@@ -215,9 +215,14 @@ const handleCommandAcciones = ({ item, action }) => {
   if (action == 'EDIT' && validPermision('administracion.personas.actualizar')) {
     editItem(item.id)
   } else if (action == 'DELETE' && validPermision('administracion.personas.eliminar')) {
-    const msg = `
+    deleteItem(item)
+  }
+}
+
+const deleteItem = (item) => {
+  const msg = `
     ¿Seguro que desea eliminar el registro?<br /><br />
-    ${item.fullName}
+    ${item.nro_documento} - ${item.nombre_completo}
     `
     ElMessageBox.confirm(msg, 'Atención', {
       top: '5vh',
@@ -244,7 +249,6 @@ const handleCommandAcciones = ({ item, action }) => {
       .catch((error) => {
         console.log(error)
       })
-  }
 }
 
 const isActionDisabled = (action) => {

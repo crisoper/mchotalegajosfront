@@ -27,7 +27,7 @@
     >
       <el-table-column prop="index" label="#" width="100" header-:align="'center'" :align="'center'" />
       <el-table-column prop="name" label="NOMBRE"/>
-      <el-table-column :align="'center'" width="150px">
+      <!-- <el-table-column :align="'center'" width="150px">
         <template #header>
           <el-dropdown trigger="click" @command="handleActionsOpciones">
             <span class="el-dropdown-link">
@@ -65,7 +65,7 @@
               </span>
               <template #dropdown>
                 <el-dropdown-menu>
-                  <!-- <el-dropdown-item
+                  <el-dropdown-item
                     :command="{ item: scope.row, action: 'EDIT' }"
                     :disabled="isActionDisabled('auth.permisos.actualizar')"
                   >
@@ -73,7 +73,7 @@
                       <v-icon name="md-edit-round" style="margin-right: 10px" />
                       Editar
                     </span>
-                  </el-dropdown-item> -->
+                  </el-dropdown-item>
                   <el-dropdown-item
                     :command="{ item: scope.row, action: 'DELETE' }"
                     :disabled="isActionDisabled('auth.permisos.eliminar')"
@@ -88,7 +88,7 @@
             </el-dropdown>
           </div>
         </template>
-      </el-table-column>
+      </el-table-column> -->
     </el-table>
     <el-divider />
     <el-row type="flex" justify="end" class="my-3">
@@ -116,7 +116,7 @@
 <script>
 import Resource from '@/api/resource'
 import {
-  ArrowDown
+  // ArrowDown
   // Plus
 } from '@element-plus/icons-vue'
 import { ElMessageBox, ElMessage, ElNotification } from 'element-plus'
@@ -132,7 +132,7 @@ const validPermision = authStore.validPermision
 export default {
   name: 'PermisosView',
   components: { 
-    ArrowDown,
+    // ArrowDown,
     CreatePermision
   },
   data() {

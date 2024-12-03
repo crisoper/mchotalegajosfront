@@ -16,8 +16,8 @@
               <div>
                 <div>
                   <v-icon v-if="PageInfo.icon" :name="PageInfo.icon" style="margin-right: 15px; float: left;" scale="1.5" />
-                  <h4 v-if="appStore.isPhone">{{ PageInfo.title || 'MUNICAJ' }}</h4>
-                  <h2 v-else>{{ PageInfo.title || 'MUNICAJ' }}</h2>
+                  <h4 v-if="appStore.isPhone">{{ PageInfo.title || 'MUNICHOTA' }}</h4>
+                  <h2 v-else>{{ PageInfo.title || 'MUNICHOTA' }}</h2>
                 </div>
                 <!-- <div>
                   <h5 class="font-weight-600">Proceso actual: {{ procesoActual.descripcion }}</h5>

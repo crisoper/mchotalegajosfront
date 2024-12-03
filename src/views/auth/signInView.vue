@@ -1,8 +1,9 @@
 <template>
   <div class="signInContainerCard">
     <el-card class="sign-in-card">
-      <el-row style="justify-content: center; margin-bottom: 15px">
-        <logologin  class="logoLogin" />
+      <el-row style="justify-content: center; margin-bottom: 15px; margin-top: 12px;">
+        <img src="@/assets/img/logo.png" alt="">
+        <!-- <logologin  class="logoLogin" /> -->
       </el-row>
       <el-row style="justify-content: center; margin-bottom: 15px">
         <h2 style="margin-top: 12px;">{{ appTitle }}</h2>
@@ -57,22 +58,23 @@
 <script>
 import { useAuthStore } from '@/stores/auth'
 import 'element-plus/theme-chalk/display.css'
-import logologin from '@/assets/img/logoLogin.svg'; 
+// import logologin from '@/assets/img/logo.png';
+
 
 const authStore = useAuthStore()
 export default {
   name: 'SignInView',
   components: {
-      logologin
-    },
+    // logologin
+  },
   data() {
     return {
       loading: false,
-      appTitle: 'Sistema TUC',
-      entidadTitle: 'Municipalidad Provincial de Cajamarca',
+      appTitle: 'Sistema de Legajos',
+      entidadTitle: 'Municipalidad Provincial de Chota',
       authForm: {
-        name: '44641743',
-        password: '44641743'
+        name: import.meta.env.MODE === 'development' ? '44641743' : '',
+        password: import.meta.env.MODE === 'development' ? '44641743' : ''
       },
       rules: {
         name: [
