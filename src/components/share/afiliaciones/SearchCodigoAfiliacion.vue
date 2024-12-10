@@ -64,7 +64,7 @@ const loading = ref(false)
 const items = ref([])
 const total = ref(0)
 const listQuery = reactive({
-  keyword: '',
+  keyBuscar: '',
   page: 1,
   limit: 7
 })

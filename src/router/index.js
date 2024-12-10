@@ -7,6 +7,7 @@ import { getToken } from '../utils/auth';
 import authRoutes from './modules/auth';
 import maestrosRoutes from './modules/maestros';
 import adminRoutes from './modules/admin';
+import reportesRoutes from './modules/reportes';
 
 export const routes =  [
   {
@@ -63,6 +64,7 @@ export const asyncRoutes = [
   authRoutes,
   maestrosRoutes,
   adminRoutes,
+  reportesRoutes,
   {
     path: '/:pathMatch(.*)*',
     name: "NotFound",

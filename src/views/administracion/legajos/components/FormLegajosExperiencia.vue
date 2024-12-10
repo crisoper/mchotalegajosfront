@@ -188,7 +188,7 @@ const loading = ref(false)
 const openDialogForm = ref(false)
 const refFormulario = ref(null)
 const query = reactive({
-  keyword: '',
+  keyBuscar: '',
   limit: 10,
   page: 1
 })

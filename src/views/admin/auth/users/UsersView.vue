@@ -142,7 +142,7 @@ export default {
       total: 0,
       item_id: 0,
       query: {
-        keyword: '',
+        keyBuscar: '',
         limit: 10,
         page: 1
       },

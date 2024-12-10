@@ -1,9 +1,16 @@
 <template>
   <div v-loading="loading">
     <el-card shadow="never" class="mb-3">
-      <h2>Detalles de sección</h2>
+      <el-row :gutter="12">
+        <el-col :xs="24" :sm="17" :md="19" :lg="20">
+          <h2>Detalles de sección</h2>
+        </el-col>
+        <el-col :xs="24" :sm="7" :md="5" :lg="4" class="text-right">
+          <el-button type="primary" @click="pushVolver()">Volver</el-button>
+          <el-button @click="getSectionDetails(legajoId);">Recargar</el-button>
+        </el-col>
+      </el-row>
     </el-card>
-    <!-- <el-button @click="getSectionDetails(legajoId);">Recargar</el-button> -->
     <el-row :gutter="12">
       <el-col :xs="24" :sm="24" :md="24">
         <el-card v-if="dataLegajoSeccion" shadow="never">
@@ -62,23 +69,23 @@
                 <td class="w-24">Acciones</td>
                 </tr>
             </table>
-            <div v-for="(nivel2) in legajoseccion.seccioneslevel2" :key="nivel2.id">
+            <div v-for="(nivel2) in legajoseccion.subsecciones" :key="nivel2.id">
               <table class="table-secciones">
-                <tr :class="{'bg-gray-100' : nivel2.seccioneslevel3.length > 0}">
+                <tr :class="{'bg-gray-100' : nivel2.subsecciones_count > 0}">
                   <td>{{ nivel2.seccion?.descripcion }}</td>
                   <td class="w-24">
-                    {{ nivel2.infopersonal?.updated_es }}
+                    {{ getFechaActualizacion(nivel2) }}
                   </td>
                   <td class="w-24">
-                    <el-button v-if="nivel2.seccioneslevel3.length == 0" type="primary" @click="agregarDocumento(nivel2, legajoseccion)">
+                    <el-button v-if="nivel2.subsecciones_count <= 0" type="primary" @click="agregarDocumento(nivel2, legajoseccion)">
                       Ver
                     </el-button>
                   </td>
                 </tr>
-                <tr v-for="(nivel3) in nivel2.seccioneslevel3" :key="nivel3.id">
+                <tr v-for="(nivel3) in nivel2.subsecciones" :key="nivel3.id">
                   <td>{{ nivel3.seccion?.descripcion }}</td>
                   <td class="w-24">
-                    {{ nivel3.infopersonal?.updated_es }}
+                    {{ getFechaActualizacion(nivel3) }}
                   </td>
                   <td class="w-24">
                     <el-button type="primary" @click="agregarDocumento(nivel3, legajoseccion)">
@@ -118,7 +125,7 @@
 
 <script setup>
 import { onMounted, watch, ref, reactive, markRaw } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import Resource from '@/api/resource'
 import { ElNotification } from 'element-plus'
 import FormLegajosSeccion from '@/views/administracion/legajos/components/FormLegajosSeccion.vue'
@@ -140,7 +147,6 @@ import { calcularAnchoDialog } from '@/utils/responsive'
 
 const seccionLegajoRequest = new Resource('administracion/legajo-secciones')
 // const seccionRequest = new Resource('administracion/secciones')
-const route = useRoute();
 const loading = ref(false)
 const openDialogForm = ref(false)
 const legajoId = ref(0)
@@ -149,6 +155,8 @@ const titleForm = ref('')
 const idItemToEdit = ref(0)
 const idLegajo = ref(-1)
 const textSeccion = ref("")
+const route = useRoute()
+const router = useRouter()
 const dataLegajoSeccion = reactive({
   id: undefined,
   descripcion: '',
@@ -226,6 +234,44 @@ const agregarDocumento = (data, legajoseccion) => {
   } else {
     currentComponent.value = FormLegajosSeccion  // Default (por si no se encuentra una tabla válida)
   }
+}
+
+const getFechaActualizacion = (nivel) => {
+  if (nivel.infopersonal !== null) {
+    return nivel.infopersonal?.updated_es;
+  } else if (nivel.incorporacion !== null) {
+    return nivel.incorporacion?.updated_es;
+  } else if (nivel.estudio !== null) {
+    return nivel.estudio?.updated_es;
+  } else if (nivel.experiencia !== null) {
+    return nivel.experiencia?.updated_es;
+  } else if (nivel.movimiento !== null) {
+    return nivel.movimiento?.updated_es;
+  } else if (nivel.compensacion !== null) {
+    return nivel.compensacion?.updated_es;
+  } else if (nivel.desempenio !== null) {
+    return nivel.desempenio?.updated_es;
+  } else if (nivel.reconocimiento !== null) {
+    return nivel.reconocimiento?.updated_es;
+  } else if (nivel.rellaboral !== null) {
+    return nivel.rellaboral?.updated_es;
+  } else if (nivel.desvinculacion !== null) {
+    return nivel.desvinculacion?.updated_es;
+  } else if (nivel.otro !== null) {
+    return nivel.otro?.updated_es;
+  } else if (nivel.sst !== null) {
+    return nivel.sst?.updated_es;
+  } else {
+    return ""
+  }
+}
+
+const pushVolver = () => {
+  router.push({ 
+    name: 'AdministracionLegajos',
+  }).catch(err => {
+    console.error('Error al navegar:', err);
+  })
 }
 
 const beforeCloseDFPersona = (done) => {

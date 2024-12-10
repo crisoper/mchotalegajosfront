@@ -143,7 +143,7 @@ const openDialogPermissions = ref(false);
 const tableData = ref([]);
 const total = ref(0);
 const query = reactive({
-  keyword: '',
+  keyBuscar: '',
   limit: 10,
   page: 1,
 });

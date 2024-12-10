@@ -85,7 +85,7 @@ const items = ref([])
 const total = ref(0)
 const activeName = ref('first')
 const listQuery = reactive({
-  keyword: '',
+  keyBuscar: '',
   page: 1,
   limit: 7
 })
